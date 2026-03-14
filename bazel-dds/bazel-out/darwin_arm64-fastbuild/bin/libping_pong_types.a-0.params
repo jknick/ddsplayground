@@ -1,0 +1,5 @@
+-no_warning_for_no_symbols
+-static
+-o
+bazel-out/darwin_arm64-fastbuild/bin/libping_pong_types.a
+bazel-out/darwin_arm64-fastbuild/bin/_objs/ping_pong_types/ping_pong.o

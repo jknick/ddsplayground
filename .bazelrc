@@ -1,0 +1,5 @@
+build --cxxopt=-std=c++17
+build --copt=-std=c17
+
+# Suppress noisy warnings from CycloneDDS headers
+build --cxxopt=-Wno-unused-parameter

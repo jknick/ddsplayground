@@ -1,0 +1,11 @@
+module(name = "rtps_inspector", version = "0.1.0")
+
+bazel_dep(name = "rules_cc", version = "0.1.1")
+
+# Use local repo rule to download and build CycloneDDS with cmake
+cyclonedds_repository = use_repo_rule(
+    "//bazel:cyclonedds_repo.bzl",
+    "cyclonedds_repository",
+)
+
+cyclonedds_repository(name = "cyclonedds")

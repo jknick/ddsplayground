@@ -1,0 +1,7 @@
+module "bazel_tools//tools/cpp:link_extra_lib" {
+  export *
+  use "bazel_tools//tools/cpp:empty_lib"
+  use "crosstool"
+}
+extern module "bazel_tools//tools/cpp:empty_lib" "../../../../../../../bazel-out/darwin_arm64-fastbuild/bin/external/bazel_tools/tools/cpp/empty_lib.cppmap"
+extern module "crosstool" "../../../../../../../external/rules_cc++cc_configure_extension+local_config_cc/module.modulemap"

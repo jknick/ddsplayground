@@ -1,0 +1,13 @@
+module "//:ping" {
+  export *
+  use "//:ping_pong_types"
+  use "rules_cc+//:link_extra_lib"
+  use "bazel_tools//tools/cpp:link_extra_lib"
+  use "bazel_tools//tools/cpp:malloc"
+  use "crosstool"
+}
+extern module "//:ping_pong_types" "../../../bazel-out/darwin_arm64-fastbuild/bin/ping_pong_types.cppmap"
+extern module "rules_cc+//:link_extra_lib" "../../../bazel-out/darwin_arm64-fastbuild/bin/external/rules_cc+/link_extra_lib.cppmap"
+extern module "bazel_tools//tools/cpp:link_extra_lib" "../../../bazel-out/darwin_arm64-fastbuild/bin/external/bazel_tools/tools/cpp/link_extra_lib.cppmap"
+extern module "bazel_tools//tools/cpp:malloc" "../../../bazel-out/darwin_arm64-fastbuild/bin/external/bazel_tools/tools/cpp/malloc.cppmap"
+extern module "crosstool" "../../../external/rules_cc++cc_configure_extension+local_config_cc/module.modulemap"

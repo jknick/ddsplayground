@@ -1,0 +1,24 @@
+load("@rules_cc//cc:defs.bzl", "cc_import", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+# Pre-built static CycloneDDS runtime library
+cc_import(
+    name = "ddsc_prebuilt",
+    static_library = "_install/lib/libddsc.a",
+)
+
+cc_library(
+    name = "ddsc",
+    hdrs = glob(["_install/include/**/*.h"]),
+    strip_include_prefix = "_install/include",
+    deps = [":ddsc_prebuilt"],
+    linkopts = ["-lpthread"],
+)
+
+# idlc IDL compiler – expose as a single-file filegroup so it can be used
+# directly in genrule tools / $(execpath ...).
+filegroup(
+    name = "idlc",
+    srcs = ["_install/bin/idlc"],
+)

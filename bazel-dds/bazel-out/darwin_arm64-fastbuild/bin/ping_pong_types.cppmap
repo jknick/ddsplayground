@@ -1,0 +1,8 @@
+module "//:ping_pong_types" {
+  export *
+  textual header "../../../bazel-out/darwin_arm64-fastbuild/bin/ping_pong.h"
+  use "+cyclonedds_repository+cyclonedds//:ddsc"
+  use "crosstool"
+}
+extern module "+cyclonedds_repository+cyclonedds//:ddsc" "../../../bazel-out/darwin_arm64-fastbuild/bin/external/+cyclonedds_repository+cyclonedds/ddsc.cppmap"
+extern module "crosstool" "../../../external/rules_cc++cc_configure_extension+local_config_cc/module.modulemap"

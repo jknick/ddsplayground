@@ -1,0 +1,1 @@
+# Package marker – keeps the repo rule file importable as //bazel:cyclonedds_repo.bzl

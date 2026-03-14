@@ -1,0 +1,13 @@
+-o
+bazel-out/darwin_arm64-fastbuild/bin/inspector
+bazel-out/darwin_arm64-fastbuild/bin/_objs/inspector/inspector.o
+bazel-out/darwin_arm64-fastbuild/bin/libping_pong_types.a
+external/+cyclonedds_repository+cyclonedds/_install/lib/libddsc.a
+-Wl,-S
+-mmacosx-version-min=26.2
+-no-canonical-prefixes
+-fobjc-link-runtime
+-headerpad_max_install_names
+-lpthread
+-lc++
+-lm

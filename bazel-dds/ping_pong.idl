@@ -1,0 +1,15 @@
+// Simple integer message exchanged between ping and pong nodes.
+module PingPong {
+    struct Msg {
+        long value;     // the integer payload
+    };
+    #pragma keylist Msg // no key fields → single-instance topic
+};
+
+// String response sent by baz back to pong.
+module BazResponse {
+    struct Msg {
+        string text;
+    };
+    #pragma keylist Msg
+};
