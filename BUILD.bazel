@@ -61,13 +61,10 @@ cc_binary(
 )
 
 ##############################################################################
-# inspector  – spies on RTPS discovery via DDS built-in topics
+# inspector  – libpcap RTPS wire sniffer (no DDS dependency)
 ##############################################################################
 cc_binary(
     name = "inspector",
     srcs = ["inspector.cpp"],
-    deps = [
-        "@cyclonedds//:ddsc",
-        ":ping_pong_types",
-    ],
+    linkopts = ["-lpcap"],
 )
